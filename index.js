@@ -1,11 +1,13 @@
 const express = require("express");
-const app = express();
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+
+const app = express();
+
 const PORT = 5000;
 
-app.use(cookieParser());
-app.use(session({ 
+app.use(cookieParser()); // 클라이언트 쪽의 쿠키에 세션을 저장한다.
+app.use(session({ // 세션을 셋팅한다.
     secret: "test1", 
     saveUninitialized: true, 
     resave: true, 
